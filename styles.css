@@ -114,7 +114,7 @@ nav > ul {
 }
 
 
-#features .desc {
+#Features .desc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,7 +123,7 @@ nav > ul {
   padding: 5px;
 }
 
-#features .icon {
+#Features .icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,7 +143,7 @@ nav > ul {
   width: 100%;
 }
 
-#pricing {
+#Pricing {
   margin-top: 60px;
   display: flex;
   flex-direction: row;
@@ -218,7 +218,7 @@ footer > span {
 }
 
 @media (max-width: 800px) {
-  #pricing {
+  #Pricing {
     flex-direction: column;
   }
   .product {
@@ -231,13 +231,13 @@ footer > span {
 
 
 @media (max-width: 650px) {
-  #features {
+  #Features {
     margin-top: 0;
   }
 }
 
 @media (max-width: 550px) {
-  #features .desc {
+  #Features .desc {
     width: 100%;
     text-align: center;
     padding: 0;
@@ -246,7 +246,7 @@ footer > span {
 }
 
 @media (max-width: 550px) {
-  #features .icon {
+  #Features .icon {
     display: none;
   }
 }
