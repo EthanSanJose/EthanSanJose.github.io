@@ -1,2 +1,2 @@
 # EthanSanJose.github.io
-Product Landing Page Test for FCC Certification Project
+Ethan's Web Development Project Portfolio
