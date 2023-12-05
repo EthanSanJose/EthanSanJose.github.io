@@ -61,7 +61,7 @@ body {
   height: auto;
   max-height: 280px;
   top: 20vh;
-  object-fit: stretch;
+  object-fit: contain;
   border: 3px solid black;
 }
 
