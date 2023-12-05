@@ -60,7 +60,7 @@ body {
   height: auto;
   max-height: 100%;
   top: 20vh;
-  object-fit: stretch;
+  object-fit: fill;
   border: 3px solid black;
 }
 
