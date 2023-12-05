@@ -59,7 +59,7 @@ body {
   margin: 0 auto;
   width: auto;
   height: auto;
-  max-height: 280px;
+  max-height: 100%;
   top: 20vh;
   object-fit: stretch;
   border: 3px solid black;
