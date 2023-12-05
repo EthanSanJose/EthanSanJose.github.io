@@ -53,6 +53,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  height: 150px;
   min-width: 100px;
   max-width: 100%;
   margin: 0 auto;
@@ -60,7 +61,7 @@ body {
   height: auto;
   max-height: 100%;
   top: 20vh;
-  object-fit: fit;
+  object-fit: contain;
   border: 3px solid black;
 }
 
