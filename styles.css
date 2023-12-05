@@ -53,9 +53,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  height: 150px;
   min-width: 100px;
-  max-width: 200px;
+  max-width: 100%;
   margin: 0 auto;
   width: auto;
   height: auto;
