@@ -55,13 +55,13 @@ body {
   align-items: center;
   height: 150px;
   min-width: 100px;
-  max-width: 300px;
+  max-width: 100%;
   margin: 0 auto;
   width: auto;
   height: auto;
   max-height: 280px;
   top: 20vh;
-  object-fit: fit;
+  object-fit: stretch;
   border: 3px solid black;
 }
 
