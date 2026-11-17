@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminars &amp; Fieldtrips | Ethan Joshua San Jose</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4a9169323b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="nav">
+        <a href="../index.html" class="nav-logo">EJSJ.</a>
+
+        <ul class="nav-list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#portfolio">My Portfolios</a></li>
+            <li><a href="../achievements-skills/index.html">Achievements &amp; Skills</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction -->
+    <section class="seminars-intro">
+        <div class="seminars-intro-content">
+            <p class="section-label">Subject Portfolio</p>
+
+            <h1>Seminars &amp; Fieldtrips</h1>
+
+            <p class="seminars-description">
+                Welcome to my Seminars & Fieldtrips portfolio. This page showcases seminars, field trips, and learning
+                experiences that I partook in during the time of the course.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="seminars-gallery-section" id="artifacts">
+
+        <div class="gallery-heading">
+            <p class="section-label">LEARNING EXPERIENCES</p>
+            <h2>Activities &amp; Events</h2>
+
+            <p>
+                Explore some of the seminars, field trips, and training
+                experiences I have participated in throughout the course.
+            </p>
+        </div>
+
+        <div class="artifact-grid">
+
+            <!-- Fieldtrip Card -->
+            <article class="artifact-card">
+
+                <div class="artifact-thumbnail">
+                    <!-- Replace this image with your actual fieldtrip thumbnail. -->
+                    <img src="images/fieldtrip.jpg" alt="Schneider Electric Plant Fieldtrip">
+                </div>
+
+                <div class="artifact-content">
+                    <p class="artifact-category">FIELDTRIP</p>
+
+                    <h3>Schneider Electric Plant Visit</h3>
+
+                    <p>
+                        On October 8, we visited the Schneider Electric Plant
+                        in Cavite to learn more about how processing hardware
+                        is built and to experience what a real production
+                        plant looks like. The visit provided an opportunity
+                        to observe an industrial environment and connect
+                        classroom learning with actual manufacturing
+                        operations.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <!-- Wadhwani Skilling Course Card -->
+            <article class="artifact-card">
+
+                <div class="artifact-thumbnail">
+                    <!-- Replace this image with your actual Wadhwani course thumbnail. -->
+                    <img src="images/wadhwani-skilling.jpg" alt="Wadhwani Skilling Course">
+                </div>
+
+                <div class="artifact-content">
+                    <p class="artifact-category">ONLINE COURSE</p>
+
+                    <h3>Wadhwani Skilling Course</h3>
+
+                    <p>
+                        This collection contains the micro-certificates
+                        earned throughout the Wadhwani Skilling Course.
+                        The certificates document the completed learning
+                        modules and the progress made throughout the course.
+                    </p>
+
+                    <button
+                        class="artifact-button open-modal"
+                        data-title="Wadhwani Skilling Course"
+                        data-description="This collection contains the micro-certificates earned throughout the Wadhwani Skilling Course. The certificates document the completed learning modules and the progress made throughout the course."
+                        data-image="images/wadhwani-skilling.jpg"
+                        data-action="external"
+                        data-action-label="View Google Drive Folder"
+                        data-action-url="https://drive.google.com/drive/folders/14YLteWZ1QROmFdyyS-_M33F8OSAUmEuI?usp=drive_link"
+                    >
+                        View Details
+                    </button>
+
+                    <!-- REPLACE THIS LINK: Insert the Google Drive folder URL containing your Wadhwani micro-certificates. -->
+                </div>
+
+            </article>
+
+
+            <!-- GUARD YOUR BYTE Card -->
+            <article class="artifact-card">
+
+                <div class="artifact-thumbnail">
+                    <!-- Replace this image with your actual seminar thumbnail. -->
+                    <img src="images/guard-your-byte.jpg" alt="GUARD YOUR BYTE Cybersecurity Awareness Seminar">
+                </div>
+
+                <div class="artifact-content">
+                    <p class="artifact-category">CYBERSECURITY SEMINAR</p>
+
+                    <h3>GUARD YOUR BYTE!</h3>
+
+                    <p>
+                        GUARD YOUR BYTE! was a cybersecurity awareness
+                        seminar that we hosted to promote awareness of
+                        digital security and responsible online practices.
+                        I served as the main host of the event, helping
+                        facilitate the seminar and guide the program.
+                    </p>
+                </div>
+
+            </article>
+            
+
+        </div>
+    </section>
+
+
+    <!-- Artifact Modal -->
+    <div class="artifact-modal" id="artifactModal" aria-hidden="true">
+
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                &times;
+            </button>
+
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="">
+            </div>
+
+            <div class="modal-details">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+
+                <div class="modal-action-container">
+                    <a href="#" id="modalAction" class="artifact-button modal-action">
+                        View Artifact
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="ai2-footer">
+        <p>Made as a Personal Project. This is not a real portfolio.</p>
+        <p>&copy; 2026 Ethan Joshua San Jose</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

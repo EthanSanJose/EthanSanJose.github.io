@@ -1,0 +1,392 @@
+
+:root {
+    --seminars-teal: #54bab9;
+    --seminars-mint: #9ed2c6;
+    --seminars-gray: #303841;
+    --seminars-white: #f0f0f0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* INTRODUCTION */
+
+.seminars-intro {
+    min-height: 45vh;
+    padding: 12rem 2rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--seminars-mint);
+    text-align: center;
+}
+
+.seminars-intro-content {
+    max-width: 850px;
+}
+
+.section-label {
+    color: var(--seminars-teal);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.seminars-intro .section-label {
+    color: var(--seminars-gray);
+}
+
+.seminars-intro h1 {
+    color: var(--seminars-gray);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin-bottom: 2rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+.seminars-description {
+    color: var(--seminars-gray);
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+
+/* GALLERY SECTION */
+
+.seminars-gallery-section {
+    padding: 8rem 7%;
+    background: var(--seminars-gray);
+}
+
+.gallery-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 5rem;
+}
+
+.gallery-heading .section-label {
+    color: var(--seminars-mint);
+}
+
+.gallery-heading h2 {
+    color: var(--seminars-white);
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+.gallery-heading > p:last-child {
+    color: var(--seminars-white);
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+
+/* ARTIFACT GRID */
+
+.artifact-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.artifact-card {
+    background: var(--seminars-white);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artifact-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+
+/* THUMBNAILS */
+
+.artifact-thumbnail {
+    width: 100%;
+    height: 240px;
+    background: var(--seminars-mint);
+    overflow: hidden;
+}
+
+.artifact-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.artifact-card:hover .artifact-thumbnail img {
+    transform: scale(1.04);
+}
+
+
+/* CARD CONTENT */
+
+.artifact-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.artifact-category {
+    color: var(--seminars-teal);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    margin-bottom: 1rem;
+}
+
+.artifact-content h3 {
+    color: var(--seminars-gray);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.artifact-content p:not(.artifact-category) {
+    color: #555;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+
+/* BUTTON */
+
+.artifact-button {
+    background: var(--seminars-teal);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.2rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: auto;
+}
+
+.artifact-button:hover {
+    background: #409c9b;
+    transform: translateY(-2px);
+}
+
+
+/* MODAL */
+
+.artifact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.artifact-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    width: 75%;
+    max-width: 950px;
+    max-height: 85vh;
+    background: var(--seminars-white);
+    border-radius: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(2rem);
+    transition: transform 0.3s ease;
+}
+
+.artifact-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 5;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--seminars-gray);
+    color: white;
+    font-size: 2.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--seminars-teal);
+}
+
+.modal-image-container {
+    width: 100%;
+    height: 350px;
+    background: var(--seminars-mint);
+    overflow: hidden;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-details {
+    padding: 3rem;
+}
+
+.modal-details h2 {
+    color: var(--seminars-gray);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-details p {
+    color: #555;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.modal-action-container {
+    margin-top: 2.5rem;
+}
+
+.modal-action {
+    display: inline-flex;
+}
+
+
+/* FOOTER */
+
+.ai2-footer {
+    background: var(--seminars-gray);
+    color: var(--seminars-white);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.ai2-footer p {
+    margin: 0.3rem 0;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    .seminars-intro {
+        padding: 11rem 2rem 5rem;
+    }
+
+    .seminars-description {
+        font-size: 1.4rem;
+    }
+
+    .seminars-gallery-section {
+        padding: 6rem 5%;
+    }
+
+    .artifact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .modal-image-container {
+        height: 280px;
+    }
+
+    .modal-details {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .seminars-intro h1 {
+        font-size: 3.2rem;
+    }
+
+    .gallery-heading h2 {
+        font-size: 2.8rem;
+    }
+
+    .artifact-content {
+        padding: 2rem;
+    }
+
+    .artifact-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .artifact-content p:not(.artifact-category) {
+        font-size: 1.3rem;
+    }
+
+    .artifact-thumbnail {
+        height: 200px;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+    .modal-image-container {
+        height: 220px;
+    }
+
+    .modal-details {
+        padding: 2rem;
+    }
+
+    .modal-details h2 {
+        font-size: 2.2rem;
+    }
+}

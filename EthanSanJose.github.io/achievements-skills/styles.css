@@ -1,0 +1,510 @@
+
+:root {
+    --achievements-teal: #54bab9;
+    --achievements-mint: #9ed2c6;
+    --achievements-gray: #303841;
+    --achievements-white: #f0f0f0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* PROFILE SECTION */
+
+.profile-section {
+    min-height: 75vh;
+    padding: 13rem 7% 7rem;
+    background: var(--achievements-mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 6rem;
+}
+
+
+/* PROFILE INFORMATION */
+
+.profile-information {
+    color: var(--achievements-gray);
+}
+
+.profile-information .section-label {
+    color: var(--achievements-gray);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-information h1 {
+    color: var(--achievements-gray);
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(3.5rem, 5vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.profile-information h2 {
+    color: var(--achievements-gray);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.profile-description {
+    color: var(--achievements-gray);
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+
+/* QUALIFICATIONS LIST */
+
+.qualifications h3 {
+    color: var(--achievements-gray);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.qualifications ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.qualifications li {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: var(--achievements-gray);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.qualifications li i {
+    width: 2rem;
+    color: var(--achievements-gray);
+    font-size: 1.6rem;
+}
+
+
+/* PROFILE PHOTO */
+
+.profile-photo-container {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+    background: var(--achievements-white);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* GALLERY SECTION */
+
+.achievements-gallery-section {
+    padding: 8rem 7%;
+    background: var(--achievements-gray);
+}
+
+.gallery-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 5rem;
+}
+
+.gallery-heading .section-label {
+    color: var(--achievements-mint);
+}
+
+.gallery-heading h2 {
+    color: var(--achievements-white);
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.gallery-heading > p:last-child {
+    color: var(--achievements-white);
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+
+/* ARTIFACT GRID */
+
+.artifact-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.artifact-card {
+    background: var(--achievements-white);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artifact-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+
+/* THUMBNAILS */
+
+.artifact-thumbnail {
+    width: 100%;
+    height: 240px;
+    background: var(--achievements-mint);
+    overflow: hidden;
+}
+
+.artifact-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.artifact-card:hover .artifact-thumbnail img {
+    transform: scale(1.04);
+}
+
+
+/* CARD CONTENT */
+
+.artifact-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.artifact-category {
+    color: var(--achievements-teal);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    margin-bottom: 1rem;
+}
+
+.artifact-content h3 {
+    color: var(--achievements-gray);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.artifact-content p:not(.artifact-category) {
+    color: #555;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+
+/* BUTTON */
+
+.artifact-button {
+    background: var(--achievements-teal);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.2rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: auto;
+}
+
+.artifact-button:hover {
+    background: #409c9b;
+    transform: translateY(-2px);
+}
+
+
+/* MODAL */
+
+.artifact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.artifact-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 75%;
+    max-width: 950px;
+    max-height: 85vh;
+    background: var(--achievements-white);
+    border-radius: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 5;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--achievements-gray);
+    color: white;
+    font-size: 2.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--achievements-teal);
+}
+
+.modal-image-container {
+    width: 100%;
+    height: 350px;
+    background: var(--achievements-mint);
+    overflow: hidden;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-details {
+    padding: 3rem;
+}
+
+.modal-details h2 {
+    color: var(--achievements-gray);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-details p {
+    color: #555;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.modal-action-container {
+    margin-top: 2.5rem;
+}
+
+
+/* FOOTER */
+
+.ai2-footer {
+    background: var(--achievements-gray);
+    color: var(--achievements-white);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.ai2-footer p {
+    margin: 0.3rem 0;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .profile-container {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 3rem;
+    }
+
+    .profile-information h1 {
+        font-size: 3.8rem;
+    }
+
+    .profile-photo-container {
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .profile-section {
+        padding: 11rem 7% 6rem;
+    }
+
+    .profile-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .profile-information {
+        order: 2;
+    }
+
+    .profile-photo-container {
+        order: 1;
+        max-width: 320px;
+    }
+
+    .profile-information h1 {
+        font-size: 4rem;
+    }
+
+    .achievements-gallery-section {
+        padding: 6rem 5%;
+    }
+
+    .artifact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .modal-image-container {
+        height: 280px;
+    }
+
+    .modal-details {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .profile-information h1 {
+        font-size: 3.2rem;
+    }
+
+    .profile-information h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-description {
+        font-size: 1.3rem;
+    }
+
+    .qualifications h3 {
+        font-size: 1.8rem;
+    }
+
+    .qualifications li {
+        font-size: 1.3rem;
+    }
+
+    .gallery-heading h2 {
+        font-size: 2.8rem;
+    }
+
+    .artifact-content {
+        padding: 2rem;
+    }
+
+    .artifact-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .artifact-content p:not(.artifact-category) {
+        font-size: 1.3rem;
+    }
+
+    .artifact-thumbnail {
+        height: 200px;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+    .modal-image-container {
+        height: 220px;
+    }
+
+    .modal-details {
+        padding: 2rem;
+    }
+
+    .modal-details h2 {
+        font-size: 2.2rem;
+    }
+}

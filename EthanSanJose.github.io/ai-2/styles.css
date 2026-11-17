@@ -1,0 +1,397 @@
+
+/* =========================================
+   AI2 PAGE
+========================================= */
+
+:root {
+    --ai2-teal: #54bab9;
+    --ai2-mint: #9ed2c6;
+    --ai2-gray: #303841;
+    --ai2-white: #f0f0f0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.ai2-intro {
+    min-height: 45vh;
+    padding: 12rem 2rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ai2-mint);
+    text-align: center;
+}
+
+.ai2-intro-content {
+    max-width: 850px;
+}
+
+.section-label {
+    color: var(--ai2-teal);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.ai2-intro .section-label {
+    color: var(--ai2-gray);
+}
+
+.ai2-intro h1 {
+    color: var(--ai2-gray);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin-bottom: 2rem;
+}
+
+.ai2-description {
+    color: var(--ai2-gray);
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.ai2-gallery-section {
+    padding: 8rem 7%;
+    background: var(--ai2-gray);
+}
+
+.gallery-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 5rem;
+}
+
+.gallery-heading h2 {
+    color: var(--ai2-gray);
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+}
+
+.gallery-heading > p:last-child {
+    color: var(--ai2-gray);
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ARTIFACT CARDS
+========================================= */
+
+.artifact-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.artifact-card {
+    background: #ffffff;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artifact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
+}
+
+.artifact-thumbnail {
+    width: 100%;
+    height: 240px;
+    background: var(--ai2-mint);
+    overflow: hidden;
+}
+
+.artifact-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.artifact-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.artifact-category {
+    color: var(--ai2-teal);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    margin-bottom: 1rem;
+}
+
+.artifact-content h3 {
+    color: var(--ai2-gray);
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.artifact-content p {
+    color: #555;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.artifact-button {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.3rem 2rem;
+    background: var(--ai2-teal);
+    color: #ffffff;
+    border-radius: 0.6rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.artifact-button:hover {
+    background: var(--ai2-gray);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MODAL BACKGROUND
+========================================= */
+
+.artifact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.artifact-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================================
+   MODAL CONTENT
+========================================= */
+
+.modal-content {
+    position: relative;
+    width: 75%;
+    max-width: 950px;
+    max-height: 85vh;
+
+    background: #ffffff;
+    border-radius: 1.2rem;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.artifact-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.8rem;
+    z-index: 2;
+
+    width: 4rem;
+    height: 4rem;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(48, 56, 65, 0.85);
+    color: #ffffff;
+
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--ai2-teal);
+}
+
+.modal-image-container {
+    width: 100%;
+    height: 300px;
+    background: var(--ai2-mint);
+    flex-shrink: 0;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal-details {
+    padding: 3rem 4rem;
+}
+
+.modal-details h2 {
+    color: var(--ai2-gray);
+    font-size: 2.6rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.modal-details p {
+    color: #555;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.modal-action-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.modal-action {
+    min-width: 220px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.ai2-footer {
+    padding: 3rem 2rem;
+    background: var(--ai2-mint);
+    color: var(--ai2-white);
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    .ai2-intro {
+        padding: 11rem 2rem 5rem;
+        min-height: 40vh;
+    }
+
+    .ai2-gallery-section {
+        padding: 6rem 5%;
+    }
+
+    .artifact-grid {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+    .artifact-thumbnail {
+        height: 220px;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .modal-image-container {
+        height: 220px;
+    }
+
+    .modal-details {
+        padding: 2.5rem;
+    }
+
+    .modal-details h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .artifact-content {
+        padding: 2rem;
+    }
+
+    .artifact-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .modal-details {
+        padding: 2rem;
+    }
+
+    .modal-image-container {
+        height: 180px;
+    }
+
+    .modal-close {
+        top: 1rem;
+        right: 1rem;
+    }
+}

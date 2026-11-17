@@ -1,0 +1,589 @@
+
+/* ================================
+   COLOR VARIABLES
+================================ */
+
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #54bab9;
+    --main-blue: #9ed2c6;
+    --main-gray: #303841;
+
+    --dark-background: #181719;
+    --card-hover: #46515b;
+}
+
+
+/* ================================
+   GLOBAL SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--main-white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 70px;
+
+    padding: 0 4rem;
+
+    background: var(--main-red);
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    z-index: 100;
+}
+
+.nav-logo {
+    font-family: "Raleway", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--main-gray);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-list a {
+    display: block;
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-gray);
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    background: var(--main-blue);
+}
+
+
+/* ================================
+   WELCOME / INTRODUCTION SECTION
+================================ */
+
+.welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 12rem 2rem 6rem;
+
+    text-align: center;
+
+    background-color: #000;
+
+    background-image:
+        linear-gradient(
+            62deg,
+            #3a3d40 0%,
+            #181719 100%
+        );
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 800px;
+    width: 100%;
+}
+
+
+/* PROFILE PHOTO */
+
+#ethan {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 4px solid var(--main-red);
+
+    margin-bottom: 2.5rem;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* NAME AND INTRODUCTION */
+
+h1,
+h2,
+h3 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5.5rem;
+    color: var(--main-white);
+}
+
+.intro-subtitle {
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 300;
+
+    color: var(--main-red);
+
+    margin-top: 0.5rem;
+}
+
+
+/* GENERAL INFORMATION */
+
+.intro-details {
+    margin-top: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.intro-details p {
+    font-size: 1.6rem;
+    color: var(--main-white);
+}
+
+.intro-details i {
+    color: var(--main-red);
+    margin-right: 0.8rem;
+}
+
+
+/* EXPLORE BUTTON */
+
+.explore-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-top: 3.5rem;
+    padding: 1.3rem 2.5rem;
+
+    background: var(--main-red);
+    color: var(--main-gray);
+
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    border-radius: 4px;
+
+    transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+    background: var(--main-blue);
+    transform: translateY(-4px);
+}
+
+
+/* ================================
+   PORTFOLIO SECTION
+================================ */
+
+.portfolio-section {
+    min-height: 80vh;
+
+    padding: 10rem 3rem;
+
+    text-align: center;
+
+    background: var(--main-blue);
+}
+
+.section-header {
+    font-size: 4.2rem;
+    color: var(--main-gray);
+
+    margin: 0 auto 1.5rem;
+}
+
+.section-description {
+    max-width: 750px;
+
+    margin: 0 auto 5rem;
+
+    font-size: 1.6rem;
+    color: var(--main-gray);
+}
+
+
+/* PORTFOLIO GRID */
+
+.portfolio-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 3rem;
+
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+
+/* PORTFOLIO CARDS */
+
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 3.5rem 2.5rem;
+
+    min-height: 320px;
+
+    background: var(--main-gray);
+    color: var(--main-white);
+
+    border-radius: 6px;
+
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+
+    background: var(--card-hover);
+
+    box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* PORTFOLIO ICONS */
+
+.portfolio-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 85px;
+    height: 85px;
+
+    margin-bottom: 2rem;
+
+    background: var(--main-red);
+    color: var(--main-gray);
+
+    border-radius: 50%;
+
+    font-size: 3.5rem;
+
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-icon {
+    transform: scale(1.1);
+}
+
+
+/* CARD TITLES */
+
+.portfolio-card h3 {
+    font-size: 2.2rem;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* CARD DESCRIPTIONS */
+
+.portfolio-card p {
+    font-size: 1.4rem;
+    font-weight: 300;
+
+    color: #d0d7de;
+
+    line-height: 1.7;
+
+    margin-bottom: 2rem;
+}
+
+
+/* CARD LINK */
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-top: auto;
+
+    color: var(--main-red);
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    transition: gap 0.3s ease;
+}
+
+.portfolio-card:hover .card-link {
+    gap: 1.6rem;
+}
+
+
+/* ================================
+   CONTACT SECTION
+================================ */
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 55vh;
+
+    padding: 8rem 2rem;
+
+    text-align: center;
+
+    background: var(--main-gray);
+}
+
+.contact-section-header h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section-header p {
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #d0d7de;
+}
+
+
+/* CONTACT LINKS */
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin-top: 4rem;
+}
+
+.contact-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem 2rem;
+
+    font-size: 2rem;
+    font-weight: 500;
+
+    transition: transform 0.3s ease;
+}
+
+.contact-details:hover {
+    transform: translateY(-6px);
+    color: var(--main-red);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 2.5rem;
+
+    background: var(--main-gray);
+
+    border-top: 4px solid var(--main-red);
+
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+footer p {
+    margin: 0.5rem 1rem;
+    text-align: center;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+/* TABLETS */
+
+@media (max-width: 850px) {
+
+    .nav {
+        padding: 0 2rem;
+    }
+
+    .nav-list a {
+    display: block;
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-gray);
+    transition: background 0.3s ease;
+    white-space: nowrap;
+    }
+
+    .portfolio-grid {
+        grid-template-columns:
+            repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+}
+
+
+/* MOBILE PHONES */
+
+@media (max-width: 600px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .nav {
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .nav-logo {
+        font-size: 2.4rem;
+    }
+
+    .nav-list {
+        width: 100%;
+
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-list a {
+    display: block;
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-gray);
+    transition: background 0.3s ease;
+    white-space: nowrap;
+    }
+
+    .welcome-section {
+        padding-top: 15rem;
+        min-height: 100vh;
+    }
+
+    #ethan {
+        width: 160px;
+        height: 160px;
+    }
+
+    h1 {
+        font-size: 4.2rem;
+    }
+
+    .intro-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-section {
+        padding: 7rem 2rem;
+    }
+
+    .section-header {
+        font-size: 3.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .portfolio-card {
+        min-height: 280px;
+    }
+
+    .contact-section-header h2 {
+        font-size: 4rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+}
