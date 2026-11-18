@@ -322,7 +322,7 @@ body {
 
 .ai2-footer {
     padding: 3rem 2rem;
-    background: var(--ai2-mint);
+    background: var(--ai2-gray);
     color: var(--ai2-white);
     text-align: center;
     font-size: 1.2rem;
